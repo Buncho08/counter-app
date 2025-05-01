@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { openLinkInNewTab } from '../lib/counterData';
 
 export default function Top() {
   let linkStyle = "transition-colors hover:text-sky-400";
@@ -13,8 +14,8 @@ export default function Top() {
         </h1>
 
         <ul className="mt-7 flex self-center items-center flex-col gap-4 text-xl text-sky-950">
-          <li><Link to="/monitor" className={linkStyle}>操作用 カウンター</Link></li>
-          <li><Link to="/counter" className={linkStyle}>モニター表示用 カウンター</Link></li>
+          <li><p onClick={() => openLinkInNewTab("/counter")} className={linkStyle}>操作用 カウンター</p></li>
+          <li><p onClick={() => openLinkInNewTab("/monitor")} className={linkStyle}>モニター表示用 カウンター</p></li>
         </ul>
       </div>
     </div>

@@ -1,17 +1,31 @@
 let listeners = new Set();
 
 function getCount() {
-    if (typeof window !== "undefined") {
-        return parseInt(localStorage.getItem("count") || "0", 10);
-      }else{
-        return 0;
-      }
-  
+  if (typeof window !== "undefined") {
+    return parseInt(localStorage.getItem("count") || "0", 10);
+  } else {
+    return 0;
+  }
+
 }
 
+export const openLinkInNewTab = (href) => {
+  const $a = document.createElement('a');
+
+  $a.setAttribute('href', href);
+  $a.setAttribute('target', '_blank');
+  $a.setAttribute('rel', 'noopener noreferrer');
+
+  document.body.appendChild($a);
+
+  $a.click();
+
+  document.body.removeChild($a);
+};
+
 function setCount(newCount) {
-    typeof window !== "undefined" ? localStorage.setItem("count", newCount) : newCount;
-    notify(newCount);
+  typeof window !== "undefined" ? localStorage.setItem("count", newCount) : newCount;
+  notify(newCount);
 }
 
 export function increment() {
