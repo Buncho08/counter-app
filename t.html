@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));//timeはミリ秒
+
+    async function getPage() {
+      let end = 1000;
+      let results = new Set();
+      let baseUrl = "https://www.qualitysoft.com/recruit/recruit/recruit-"
+
+      for(let i = 0; i <= end; i++){
+        console.log("sleep");
+        await sleep(1000);
+        console.log("start");
+        let result = await fetch(`http://archive.org/wayback/available?url=${baseUrl}${i}`, {
+          method: "GET",
+          mode: "no-cors",
+          credentials: "omit",
+        });
+        result.ok ?results.add(result.json()):"";
+      }
+
+      console.log(results);
+    }
+
+    getPage();
+  </script>
+</body>  
+</html>
