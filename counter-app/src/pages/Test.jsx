@@ -11,8 +11,26 @@ export default function Test() {
 
     return (
         <>
+            <p>
+                ⚠️テストのため、10, 20, 30, 40...の10杯刻みでボーナスタイム中になるようになっています
+            </p>
+            <p>
+                ⚠️今はシンプルな仕組みです  ボーナスタイム終了ボタンとかもできるし、時間で切り替えみたいな仕組みもできる
+            </p>
             {
-                ((Math.floor((count / 10) % 10) * 10) + (count % 10)) !== 10 ?
+                (((Math.floor((count / 10) % 10) * 10) >= 10) && ((count % 10) == 0)) ?
+                    <div className='font-noto h-full flex flex-col items-center justify-center'>
+                        <p className='self-start mx-40 text-7xl font-bold mb-12'>
+                            {(Math.floor((count / 10) % 100) * 10)}杯記念
+                        </p>
+                        <h1 className='text-9xl animate-pulse font-extrabold'>
+                            <span className="text-red-500">ボ</span><span className="text-amber-400">ー</span><span className="text-yellow-300">ナ</span><span className="text-green-500">ス</span><span className="text-blue-500">タ</span><span className="text-sky-600">イ</span><span className="text-purple-600">ム</span><span className="text-blue-600">中</span><span className="text-sky-500">！</span><span className="text-green-500">！</span><span className="text-yellow-300">！</span><span className="text-amber-400">！</span><span className="text-red-500">！</span>
+                        </h1>
+                        <p className='self-center mx-40 text-5xl mb-12 my-10'>
+                            全ドリンク <span className='text-7xl font-extrabold text-red-600'>30円</span> !!!
+                        </p>
+                    </div>
+                    :
                     <div className='font-noto h-full flex flex-col items-center justify-center'>
                         <div className='mb-10 flex flex-row'>
                             <h1 className='text-6xl'>開花宣言</h1>
@@ -36,18 +54,6 @@ export default function Test() {
                         </p>
                         <p className='my-8 text-5xl'>
                             めざせ1000杯！！！
-                        </p>
-                    </div>
-                    :
-                    <div className='font-noto h-full flex flex-col items-center justify-center'>
-                        <p className='self-start mx-40 text-7xl font-bold mb-12'>
-                            {(Math.floor((count / 10) % 100) * 10)}杯記念
-                        </p>
-                        <h1 className='text-9xl animate-pulse font-extrabold'>
-                            <span className="text-red-500">ボ</span><span className="text-amber-400">ー</span><span className="text-yellow-300">ナ</span><span className="text-green-500">ス</span><span className="text-blue-500">タ</span><span className="text-sky-600">イ</span><span className="text-purple-600">ム</span><span className="text-blue-600">中</span><span className="text-sky-500">！</span><span className="text-green-500">！</span><span className="text-yellow-300">！</span><span className="text-amber-400">！</span><span className="text-red-500">！</span>
-                        </h1>
-                        <p className='self-center mx-40 text-5xl mb-12 my-10'>
-                            全ドリンク <span className='text-7xl font-extrabold text-red-600'>30円</span> !!!
                         </p>
                     </div>
             }
