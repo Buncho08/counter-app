@@ -11,7 +11,7 @@ export default function Counter() {
   }, []);
 
   return (
-    <div className='font-noto h-full flex flex-col items-center justify-center bg-amber-200'>
+    <div className='font-noto h-full flex flex-col items-center justify-center'>
       <div className='mb-10 flex flex-row'>
         <h1 className='text-6xl'>開花宣言</h1>
         <h2 className='text-6xl'>
