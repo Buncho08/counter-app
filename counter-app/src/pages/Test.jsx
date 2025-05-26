@@ -21,7 +21,7 @@ export default function Test() {
                 ⚠️今はシンプルな仕組みです  ボーナスタイム終了ボタンとかもできるし、時間で切り替えみたいな仕組みもできる
             </p>
             {
-                (((Math.floor((count / 10) % 10) * 10) >= 10) && ((count % 10) == 0)) ?
+                (count >= 1000) ?
                     <Bonus />
                     :
                     <Monitor />

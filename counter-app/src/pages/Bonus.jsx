@@ -21,8 +21,8 @@ export default function Bonus() {
             >
                 <source src={bonus} type="video/mp4" />
             </video>
-            <div className='absolute w-[650px] left-[570px] top-[400px] text-center'>
-                <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[250px] font-extrabold text-yellow-500'>
+            <div className='absolute w-[650px] left-[980px] top-[70px] text-center'>
+                <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[120px] font-extrabold text-yellow-500'>
                     {count}
                 </p>
             </div>
