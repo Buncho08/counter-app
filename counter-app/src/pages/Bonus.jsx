@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import { onChange, getCountSync } from '../lib/counterData';
 
 export default function Bonus() {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(getCountSync());
 
     useEffect(() => {
-        setCount(getCountSync());
         const unsubscribe = onChange(setCount);
         return unsubscribe;
     }, []);
@@ -22,7 +21,7 @@ export default function Bonus() {
                 <source src={bonus} type="video/mp4" />
             </video>
             <div className='absolute w-[650px] left-[980px] top-[70px] text-center'>
-                <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[120px] font-extrabold text-yellow-500'>
+                <p className='text-[120px] font-extrabold text-black'>
                     {count}
                 </p>
             </div>
