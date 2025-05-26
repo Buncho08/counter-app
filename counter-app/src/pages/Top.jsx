@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { openLinkInNewTab } from '../lib/counterData';
-import nanako from "/public/nanako_demo.jpg";
+import nanako from "/nanako.png";
 
 export default function Top() {
   let linkStyle = "transition-colors hover:text-sky-400";
