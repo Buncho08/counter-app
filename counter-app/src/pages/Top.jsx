@@ -16,8 +16,7 @@ export default function Top() {
 
         <ul className="mt-7 flex self-center items-center flex-col gap-4 text-xl text-sky-950">
           <li><p onClick={() => openLinkInNewTab("/counter")} className={linkStyle}>操作用 カウンター</p></li>
-          <li><p onClick={() => openLinkInNewTab("/monitor")} className={linkStyle}>モニター表示用 カウンター</p></li>
-          <li><p onClick={() => openLinkInNewTab("/test")} className={linkStyle}>モニター表示用 ボーナスタイム テストページ</p></li>
+          <li><p onClick={() => openLinkInNewTab("/main")} className={linkStyle}>モニター表示用 カウンター</p></li>
         </ul>
       </div>
     </div>

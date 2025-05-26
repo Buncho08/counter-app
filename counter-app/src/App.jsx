@@ -3,13 +3,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Top from './pages/Top.jsx';
 import Monitor from './pages/Monitor.jsx';
 import Counter from './pages/Counter.jsx';
-import Test from './pages/Test.jsx';
+import Main from './pages/Main.jsx';
 
 const router = createBrowserRouter([
   { path: '/', element: <Top /> },
   { path: '/monitor', element: <Monitor /> },
   { path: '/counter', element: <Counter /> },
-  { path: '/test', element: <Test /> },
+  { path: '/main', element: <Main /> },
 ]);
 
 
