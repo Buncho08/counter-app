@@ -9,7 +9,7 @@ export default function Monitor() {
     return unsubscribe;
   }, []);
   return (
-    <div className='font-noto h-[1080px] w-[1980px] relative bg-black'>
+    <div className='font-noto h-full relative bg-black'>
       <video
         autoPlay
         loop
