@@ -9,7 +9,7 @@ export default function Monitor() {
     return unsubscribe;
   }, []);
   return (
-    <div className='font-noto h-full flex flex-col items-center justify-center relative bg-black'>
+    <div className='font-noto h-[1080px] w-[1980px] relative bg-black'>
       <video
         autoPlay
         loop
@@ -19,7 +19,7 @@ export default function Monitor() {
       >
         <source src={counter} type="video/mp4" />
       </video>
-      <div className='absolute w-[800px] left-[540px] top-[480px] text-center self-center justify-center '>
+      <div className='absolute w-full bottom-[9rem] text-center mx-auto my-0'>
         <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[300px] font-extrabold text-yellow-500'>
           {count}
         </p>
