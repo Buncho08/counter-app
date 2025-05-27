@@ -6,7 +6,7 @@ if (typeof window !== "undefined") {
         }
     });
 }
-export function onChange(callback) {
+export function onChangePage(callback) {
     listeners.add(callback);
     return () => listeners.delete(callback);
 }

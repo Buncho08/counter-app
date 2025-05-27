@@ -20,7 +20,7 @@ export default function Bonus() {
             >
                 <source src={bonus} type="video/mp4" />
             </video>
-            <div className='absolute w-full top-[4rem] text-center mx-auto ml-[21rem] my-0'>
+            <div className='absolute right-[32rem] top-[4rem] text-center my-0'>
                 {/* <div className='absolute w-[650px] left-[980px] top-[70px] text-center'> */}
                 <p className='text-[120px] font-extrabold text-black'>
                     {count}

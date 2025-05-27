@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { increment, decrement, onChange, getCountSync } from '../lib/counterData';
+import DropDownMenu from '../component/dropDown';
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -29,7 +30,7 @@ export default function Counter() {
           杯
         </p>
       </div>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-row gap-8'>
         {/* <button onClick={increment} style={{ marginRight: 10 }}>+1</button>
         <button onClick={decrement}>-1</button> */}
         <a
@@ -48,19 +49,12 @@ export default function Counter() {
           減らす -1
         </a>
       </div>
-      <div className='flex flex-row justify-end items-end'>
-        <p>
-        </p>
-        <p className='my-8 text-4xl'>
-          ボーナスタイムまであと…
-        </p>
-        <p className='my-8 text-6xl'>
-          {100 - ((Math.floor((count / 10) % 10) * 10) + (count % 10))}
-        </p>
-        <p className='my-8 text-4xl'>
-          杯
-        </p>
-      </div>
+
+      <h3 className='mt-10 mb-5 text-4xl'>
+        ページ切り替え
+      </h3>
+      <DropDownMenu />
+
     </div>
   );
 }

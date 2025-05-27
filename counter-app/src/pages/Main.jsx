@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { onChange, getCountSync } from '../lib/counterData';
+import { onChangePage } from '../lib/changePage';
 import { getKindSync } from '../lib/changePage';
 import Monitor from './Monitor';
 import Bonus from './Bonus';
@@ -13,6 +14,8 @@ export default function Test() {
 
     useEffect(() => {
         const unsubscribe = onChange(setCount);
+        // eslint-disable-next-line no-unused-vars
+        const p = onChangePage(setKinds);
         return unsubscribe;
     }, []);
 
@@ -26,9 +29,6 @@ export default function Test() {
                         <Monitor />
                     :
                     <div className='font-noto h-full flex flex-col items-center justify-center relative'>
-                        <p>
-                            {kind}
-                        </p>
                         {(kind === 1) ?
                             <img src={gomen} alt="" className='h-full w-full' />
                             :

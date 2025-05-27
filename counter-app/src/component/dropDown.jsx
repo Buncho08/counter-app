@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
-import { onChange, getKindSync } from '../lib/changePage';
+import { setKind, onChangePage, getKindSync } from '../lib/changePage';
 
 export default function DropDownMenu() {
-    const [isOpen, setIsOpen] = useState(false);
-    const [kinds, setKinds] = useState(0); // 0:main, 1:gomen, 2:drink
-
     // const items = ['カウンター', 'ドリンクカウンターは無人になります', 'ドリンクメニュー'];
     const items = [
         {
@@ -13,20 +10,23 @@ export default function DropDownMenu() {
         },
         {
             value: 1,
-            name: 'ドリンクカウンターは無人になります',
+            name: 'ドリンクカウンター無人になります',
         },
         {
             value: 2,
             name: 'ドリンクメニュー',
         }
     ]
+    const [isOpen, setIsOpen] = useState(false);
+    const [kinds, setKinds] = useState(items[0].name); // 0:main, 1:gomen, 2:drink
     useEffect(() => {
-        setKinds(getKindSync());
-        const unsubscribe = onChange(setKinds);
+        setKinds(items[getKindSync()].name);
+        const unsubscribe = onChangePage(setKinds);
         return unsubscribe;
     }, []);
     const handleSelect = (item) => {
-        setKinds(item);
+        setKind(item.value);
+        setKinds(item.name);
         setIsOpen(false);
     };
     return (
@@ -34,9 +34,10 @@ export default function DropDownMenu() {
             <span className="inline-flex divide-x divide-gray-300 overflow-hidden rounded border border-gray-300 bg-white shadow-sm">
                 <button
                     type="button"
+                    onClick={() => setIsOpen((prev) => !prev)}
                     className="px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900 focus:relative"
                 >
-                    {items[kinds].name}
+                    {kinds}
                 </button>
 
                 <button
@@ -66,11 +67,11 @@ export default function DropDownMenu() {
                     {items.map((item) => (
                         < button
                             key={item.value}
-                            onClick={() => handleSelect(item.value)}
+                            onClick={() => handleSelect(item)}
                             className="block w-full px-3 py-2 text-left text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
                             role="menuitem"
                         >
-                            {console.log(item)}
+                            {console.log(item.value)}
                             {item.name}
                         </button>
                     ))}
