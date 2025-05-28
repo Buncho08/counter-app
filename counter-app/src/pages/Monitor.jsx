@@ -19,8 +19,8 @@ export default function Monitor() {
       >
         <source src={counter} type="video/mp4" />
       </video>
-      <div className='absolute w-full bottom-[9rem] text-center mx-auto my-0'>
-        <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[300px] font-extrabold text-yellow-500'>
+      <div className='absolute w-full bottom-[7rem] text-center mx-auto my-0'>
+        <p style={{ webkitTextStroke: "7px #000", textStroke: "7px #000", paintOrder: "stroke" }} className='text-[250px] font-extrabold text-yellow-500'>
           {count}
         </p>
       </div>
